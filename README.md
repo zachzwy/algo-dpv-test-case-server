@@ -9,6 +9,9 @@ Tech stack: NodeJS, express, Heroku.
 - Add more problem deserializers
 - Add more test cases for existing/new problems
 - Support languages other than python
+- Persistent database
+- Upload new problems and test cases directly from client
+- User session, authentication, authorization
 - CICD
 - Scale up if needed
 
