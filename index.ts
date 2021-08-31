@@ -9,17 +9,6 @@ dotenv.config();
 const app = express();
 app.use(cors());
 
-// type Text = 'text';
-// app.use(function (req, res, next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//   res.header(
-//     'Access-Control-Allow-Headers',
-//     'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
-//   );
-//   next();
-// });
-
 app.get("/problems", (req: express.Request, res: express.Response) => {
   res.send(problemAvailability);
 });
