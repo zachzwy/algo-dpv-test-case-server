@@ -1,4 +1,4 @@
-file = open('./algo-dpv-tests/6-1.txt', 'r')
+file = open('./algo-dpv-tests/6-2.txt', 'r')
 tests = file.readlines()
 
 for i, test in enumerate(tests):
@@ -6,7 +6,7 @@ for i, test in enumerate(tests):
     test = test[:-1]
   arr, expected = test.split(" ")
   arr = [int(x) for x in arr.split(",")]
-  expected = int(expected)
+  expected = [int(x) for x in expected.split(",")]
 
   actual = solution(arr)
   if actual == expected:

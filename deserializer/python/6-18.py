@@ -10,7 +10,7 @@ for i, test in enumerate(tests):
   expected = True if expected == "true" else False
 
   actual = solution(coins, target)
-  if actual == int(expected):
+  if actual == expected:
     print(f'@#$coins={coins}; target={target}@#$')
   else:
     print(f'@#$coins={coins}; target={target}; expected={expected}; actual={actual}@#$')

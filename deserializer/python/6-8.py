@@ -8,7 +8,7 @@ for i, test in enumerate(tests):
   expected = int(expected)
 
   actual = solution(str1, str2)
-  if actual == int(expected):
+  if actual == expected:
     print(f'@#$str1={str1}; str2={str2}@#$')
   else:
     print(f'@#$str1={str1}; str2={str2}; expected={expected}; actual={actual}@#$')

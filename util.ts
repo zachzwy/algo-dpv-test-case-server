@@ -12,6 +12,18 @@ export const problemAvailability = {
       python: "def solution(arr):",
     },
   },
+  "6-2": {
+    title: "6.2 Hotel to stop",
+    placeholder: {
+      python: "def solution(arr):",
+    },
+  },
+  "6-4": {
+    title: "6.4 Is valid word",
+    placeholder: {
+      python: "def solution(str):",
+    },
+  },
   "6-8": {
     title: "6.8 Longest common substring",
     placeholder: {
