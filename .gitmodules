@@ -1,0 +1,3 @@
+[submodule "algo-dpv-tests"]
+	path = algo-dpv-tests
+	url = git@github.com:zachzwy/algo-dpv-tests.git
