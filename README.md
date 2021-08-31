@@ -8,6 +8,7 @@ Tech stack: NodeJS, express, Heroku.
 
 - To contribute new problem: add corresponding problem deserializer
 - To contribute more test cases to existing problem: go to https://github.com/zachzwy/algo-dpv-tests
+- Payload validation
 - Support languages other than python
 - Persistent database
 - Upload new problems and test cases directly from client
