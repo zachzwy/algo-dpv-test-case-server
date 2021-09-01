@@ -21,8 +21,7 @@ export const problemAvailability = {
   "6-4": {
     title: "6.4 Is valid word",
     placeholder: {
-      python:
-        "def solution(str, isInDict):  # isInDict is a boolean function accepting a str",
+      python: "def solution(str, dic):",
     },
   },
   "6-8": {

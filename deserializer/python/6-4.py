@@ -9,11 +9,8 @@ for i, test in enumerate(tests):
   expected = args[-1]
   expected = True if expected == "true" else False
   dic = args[1:-1]
-
-  def isInDict(s):
-    return s in dic
-
-  actual = solution(string, isInDict)
+  
+  actual = solution(string, dic)
   if actual == expected:
     print(f'@#$string={string}; dic={dic}@#$')
   else:
