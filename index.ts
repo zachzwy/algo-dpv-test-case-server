@@ -24,7 +24,7 @@ app.get("/submit", async (req: express.Request, res: express.Response) => {
   );
 
   if (resp.data.score <= 0.1) {
-    res.send("Bot detected.");
+    res.send(`Bot detected - ${resp.data.score}`);
     return;
   }
 
