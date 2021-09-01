@@ -10,10 +10,10 @@ for i, test in enumerate(tests):
   expected = True if expected == "true" else False
   dic = args[1:-1]
 
-  def dict(s):
+  def isInDict(s):
     return s in dic
 
-  actual = solution(string)
+  actual = solution(string, isInDict)
   if actual == expected:
     print(f'@#$string={string}; dic={dic}@#$')
   else:
