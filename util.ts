@@ -42,4 +42,10 @@ export const problemAvailability = {
       python: "def solution(coins, target):",
     },
   },
+  "6-20": {
+    title: "6.20 Optimal binary search trees",
+    placeholder: {
+      python: "def solution(freq):",
+    },
+  },
 };
