@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import axios from "axios";
 import cors from "cors";
 import { PythonShell } from "python-shell";
 import fs from "fs";
@@ -13,10 +14,19 @@ app.get("/problems", (req: express.Request, res: express.Response) => {
   res.send(problemAvailability);
 });
 
-app.get("/submit", (req: express.Request, res: express.Response) => {
-  const { code, problem, language } = req.query;
+app.get("/submit", async (req: express.Request, res: express.Response) => {
+  const { code, problem, language, token } = req.query;
   console.log("problem: ", problem);
   console.log("language: ", language);
+
+  const resp = await axios.post(
+    `https://www.recaptcha.net/recaptcha/api/siteverify?response=${token}&secret=${process.env.RECAPTCHA_SECRET_KEY}`
+  );
+
+  if (resp.data.score <= 0.1) {
+    res.send("Bot detected.");
+    return;
+  }
 
   fs.readFile(
     `./deserializer/${language}/${problem}.${suffixes[language as string]}`,
