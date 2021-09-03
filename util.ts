@@ -1,51 +1,31 @@
-export const suffixes: { [key: string]: string } = {
-  python: "py",
-  "c++": "cpp",
-  java: "java",
-  javascript: "js",
-};
+import fs from "fs";
 
-export const problemAvailability = {
-  "6-1": {
-    title: "6.1 Maximum contiguous subsequence sum",
-    placeholder: {
-      python: "def solution(arr):",
-    },
-  },
-  "6-2": {
-    title: "6.2 Hotel to stop",
-    placeholder: {
-      python: "def solution(arr):",
-    },
-  },
-  "6-4": {
-    title: "6.4 Is valid word",
-    placeholder: {
-      python: "def solution(str, dic):",
-    },
-  },
-  "6-8": {
-    title: "6.8 Longest common substring",
-    placeholder: {
-      python: "def solution(str1, str2):",
-    },
-  },
-  "6-17": {
-    title: "6.17 Make change I",
-    placeholder: {
-      python: "def solution(coins, target):",
-    },
-  },
-  "6-18": {
-    title: "6.18 Make change II",
-    placeholder: {
-      python: "def solution(coins, target):",
-    },
-  },
-  "6-20": {
-    title: "6.20 Optimal binary search trees",
-    placeholder: {
-      python: "def solution(freq):",
-    },
-  },
+const dirName = "./algo-dpv-tests/";
+
+export const getProblems = () => {
+  const availableProblems: {
+    [key: string]: object;
+  } = {};
+
+  const fileNames = fs.readdirSync(dirName);
+
+  fileNames.forEach((fileName) => {
+    if (fileName.includes("json")) {
+      const key = fileName.split(".")[0];
+      const content = fs.readFileSync(dirName + fileName, "utf-8");
+      const {
+        problems: { title },
+        tests,
+      } = JSON.parse(content);
+      const args = Object.keys(tests[0].args);
+      availableProblems[key] = {
+        title,
+        placeholder: {
+          python: `def solution(${args.join(", ")}):`,
+        },
+      };
+    }
+  });
+
+  return availableProblems;
 };
